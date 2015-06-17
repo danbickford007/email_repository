@@ -6,7 +6,7 @@ class Scraper
 
 
   def begin
-    (252...4000000).each do |id|
+    (4569...4000000).each do |id|
       record id
     end
   end
