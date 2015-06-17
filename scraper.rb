@@ -5,9 +5,15 @@ URL = `echo $URL`.sub(/\n/, '')
 class Scraper
 
 
-  def begin
-    (4569...4000000).each do |id|
-      record id
+  def start 
+    (5266...4000000).each do |id|
+      begin
+        record id
+      rescue
+	next
+      retry
+	next
+      end
     end
   end
 
@@ -31,4 +37,4 @@ class Scraper
 
 end
 
-Scraper.new.begin
+Scraper.new.start
